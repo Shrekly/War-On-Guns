@@ -1,0 +1,97 @@
+#include "Lives.h"
+#include "../Core/Renderer/ConsoleColours.h"
+
+//Lives sprites
+CHAR_INFO LivesDigitSprite[LIVES_DIGITS][LIVES_WIDTH * LIVES_HEIGHT]
+{
+	{
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+	},
+	{
+
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },
+
+	},
+	{
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },
+		{ ' ' ,BACKGROUND_BLACK },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE } ,{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_WHITE },{ ' ' ,BACKGROUND_BLACK },
+	},
+};
+
+//constructor
+Lives :: Lives()
+	:m_bInitialised(false)
+{
+}
+
+//destuctor
+Lives :: ~Lives()
+{
+}
+
+//initialise all variables
+void Lives::Initialise(Vector2& position)
+{
+	AnimatedSprite::Initialise(&LivesDigitSprite[0][0], Vector3(LIVES_WIDTH, LIVES_HEIGHT, LIVES_DIGITS));
+
+	Vector2 startPosition(position.x - (AnimatedSprite::GetSize().x / 2), position.y - (AnimatedSprite::GetSize().y / 2));
+	SetPosition(startPosition);
+
+	SetAnimationFrame(0);
+	m_bInitialised = true;
+}
+
+//render the sprite
+void Lives::Render(ASCIIRenderer* pRenderer) 
+{
+	if (!m_bInitialised)
+		return;
+
+	AnimatedSprite::Render(pRenderer);
+}
+
+//updates lives
+void Lives::Update(float deltatime)
+{
+	if (!m_bInitialised)
+		return;
+}
+
+//sets it to the next animation value
+void Lives::SetDigitValue(int value) 
+{
+	if (value >= 0 && value < LIVES_DIGITS)
+	{
+		SetAnimationFrame(value);
+	}
+	else
+	{
+		SetAnimationFrame(0);
+	}
+}
